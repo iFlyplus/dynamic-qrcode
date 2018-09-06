@@ -8,8 +8,14 @@ export default new Router({
     {
       path: '/',
       name: '管理',
-      component: resolve => require(['@/views/layout/Layout'], resolve)
-
+      component: resolve => require(['@/views/layout/Layout'], resolve),
+      children:[
+        {
+          path: '/cardlist',
+          name: '管理',
+          component: resolve => require(['@/views/qr-manage-content/qrcodeList'], resolve)
+        }
+      ]
     }
   ]
 })

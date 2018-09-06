@@ -1,12 +1,14 @@
 <template>
     <!--div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}"-->
     <div class="app-wrapper">
+        <v-navbar></v-navbar>
         <div class="sidebar-wrapper">
             <v-sidebar class="sidebar-container"></v-sidebar>
         </div>
-        <div class="main-container">
-            <v-navbar></v-navbar>
-            <v-main></v-main>
+        <div class="main-container">          
+            <v-main>
+                <router-view />
+            </v-main>
         </div>
     </div>
 </template>
