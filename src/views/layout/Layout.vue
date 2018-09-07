@@ -13,8 +13,6 @@
     </div>
 </template>
 
-
-
 <script>
 // import {Sidebar, Navbar, Main} from '@/views/layout'
 import vSidebar from '@/views/layout/Sidebar.vue'
@@ -59,9 +57,9 @@ export default {
             }
         }
         .sidebar-wrapper {
-            width: 180px;
+            width: 260px;
             position: fixed;
-            top: 0;
+            top: 69px;
             bottom: 0;
             left: 0;
             z-index: 1001;
@@ -75,12 +73,12 @@ export default {
             bottom: 0;
             left: 0;
             right: -17px;
-            overflow-y: scroll;
+            // overflow-y: scroll;
         }
         .main-container {
             min-height: 100%;
             transition: all .28s ease-out;
-            margin-left: 180px;
+            margin-left: 260px;
         }
     }
 </style>

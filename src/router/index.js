@@ -14,6 +14,11 @@ export default new Router({
           path: '/cardlist',
           name: '管理',
           component: resolve => require(['@/views/qr-manage-content/qrcodeList'], resolve)
+        },
+        {
+          path: '/card',
+          name: '管理',
+          component: resolve => require(['@/views/qr-manage-content/qrcodeItem'], resolve)
         }
       ]
     }

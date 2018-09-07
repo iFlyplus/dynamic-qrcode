@@ -32,6 +32,11 @@ export default {};
 <style rel="stylesheet/scss" lang="scss" scoped>
 .el-menu {
   min-height: 100%;
+  width: 280px;
+  color: #616568;
+  .el-menuItem{
+
+  }
 }
 .svg-icon {
   margin-right: 10px;
