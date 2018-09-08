@@ -17,6 +17,7 @@ export default {
         qrcodeItem
     },
     mounted(){
+        console.log(this.$route)
         //TODO : get data
         this.total=500
         this.$nextTick(
@@ -27,7 +28,7 @@ export default {
     data(){
         return {
             items:[
-                1,2,3,4,5,6,7,8,9
+                1,2,3,4,5,6,7,8,9,10
             ],
             total:100
         }
@@ -41,5 +42,8 @@ export default {
 }
 </script>
 
-
-
+<style rel="stylesheet/scss" lang="scss">
+.block{
+    width: 1100px;
+}
+</style>

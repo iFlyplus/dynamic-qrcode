@@ -8,7 +8,7 @@
       text-color="#fff"
       active-text-color="#ffd04b">
       <el-menu-item index="1">
-        <i class="el-icon-document"></i>
+        <!-- <img class="img" src="@/assets/all-qrcode.png" /> --><i class="el-icon-document"></i>
         <span slot="title">所有二维码</span>
       </el-menu-item>
       <el-menu-item index="2">
@@ -32,17 +32,11 @@ export default {};
 <style rel="stylesheet/scss" lang="scss" scoped>
 .el-menu {
   min-height: 100%;
-  width: 280px;
-  color: #616568;
-  .el-menuItem{
-
+  width: 260px;
+  background-color: #616568;
+  .img{
+    height: 20px;
+    widows: 20px;
   }
-}
-.svg-icon {
-  margin-right: 10px;
-}
-.hideSidebar .menu-indent {
-  display: block;
-  text-indent: 10px;
 }
 </style>

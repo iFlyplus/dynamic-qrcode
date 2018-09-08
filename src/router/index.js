@@ -9,18 +9,23 @@ export default new Router({
       path: '/',
       name: '管理',
       component: resolve => require(['@/views/layout/Layout'], resolve),
-      children:[
+      children: [
         {
-          path: '/cardlist',
-          name: '管理',
-          component: resolve => require(['@/views/qr-manage-content/qrcodeList'], resolve)
-        },
-        {
-          path: '/card',
-          name: '管理',
-          component: resolve => require(['@/views/qr-manage-content/qrcodeItem'], resolve)
+          path: '/manage',
+          name: 'manage',
+          component: resolve => require(['@/views/qr-manage-content/manage'], resolve)
         }
       ]
+    },
+    {
+      path: '/login',
+      name: '管理',
+      component: resolve => require(['@/views/qr-manage-content/login'], resolve),
+    },
+    {
+      path: '/create',
+      name: '管理',
+      component: resolve => require(['@/views/qr-manage-content/create'], resolve),
     }
   ]
 })

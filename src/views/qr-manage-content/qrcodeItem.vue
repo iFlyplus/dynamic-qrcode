@@ -1,6 +1,8 @@
 <template>
     <el-card class="qrcode-card" >
-        <el-col :span="1" >asd </el-col>
+        <el-col :span="1" >
+            <input type="checkbox" id="john" value="John" v-model="xxx" class="checkbox">
+        </el-col>
         <el-col :span="11" :offset="1" >
             <div >            
                 <el-col :offset="2">
@@ -99,6 +101,7 @@
 export default {
   data() {
     return {
+      xxx: null,
       count: 16,
       aaaa: "无文件夹",
       name: "我的 PDF",
@@ -120,6 +123,10 @@ export default {
   height: 150px;
   .el-card__body {
     padding: 5px;
+  }
+  .checkbox {
+    margin-top: 60px;
+    margin-left: 20px;
   }
   .title {
     display: inline-block;
