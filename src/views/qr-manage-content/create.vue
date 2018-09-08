@@ -111,7 +111,7 @@ export default {
       }
     },
     handleClickFooterButton() {
-      let self = this;
+      const self = this;
       if (self.step === "select qrcode type") {
         self.step = "enter website address";
       } else if (self.step === "enter website address") {

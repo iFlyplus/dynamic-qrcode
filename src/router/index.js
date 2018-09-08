@@ -19,12 +19,17 @@ export default new Router({
     },
     {
       path: '/login',
-      name: '管理',
+      name: 'login',
       component: resolve => require(['@/views/qr-manage-content/login'], resolve),
     },
     {
+      path: '/signup',
+      name: 'signup',
+      component: resolve => require(['@/views/qr-manage-content/signup'], resolve),
+    },
+    {
       path: '/create',
-      name: '管理',
+      name: 'create',
       component: resolve => require(['@/views/qr-manage-content/create'], resolve),
     }
   ]

@@ -35,7 +35,7 @@
           </div>
           <el-row>
               <el-col span="12"><p class="find-back" @click="gotoFindback()">忘记密码？</p></el-col>
-              <el-col span="12"><p class="register" @click="gotoRegister()">没有账号？ 注册</p></el-col>
+              <el-col span="12"><p class="register" @click="gotoSignup()">没有账号？ 注册</p></el-col>
           </el-row>
         </el-form>
       </div>
@@ -63,7 +63,11 @@ export default {
       errInfo: ""
     };
   },
-  methods: {}
+  methods: {
+    gotoSignup() {
+      this.$router.push("/signup");
+    }
+  }
 };
 </script>
 
