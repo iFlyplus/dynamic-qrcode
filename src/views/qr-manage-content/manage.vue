@@ -34,6 +34,7 @@ export default {
     position: fixed;
     top:70px;
     left: 260px;
+    bottom: 0;
     overflow: scroll;
 }
 </style>

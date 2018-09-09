@@ -1,15 +1,15 @@
 <template>
-    <el-card class="qrcode-card" >
-        <el-col :span="1" >
+    <el-card class="qrcode-card">
+        <el-col :span="1">
             <input type="checkbox" id="john" value="John" v-model="xxx" class="checkbox">
         </el-col>
-        <el-col :span="11" :offset="1" >
-            <div >            
+        <el-col :span="11" :offset="1">
+            <div>
                 <el-col :offset="2">
-                网站
-                </el-col> 
+                    网站
+                </el-col>
             </div>
-            <div class="title" >
+            <div class="title">
                 <el-col :span="1">
                     <img class="img" src="@/assets/file.png" />
                 </el-col>
@@ -20,26 +20,26 @@
 
             <el-row class="info">
                 <el-col :span="11">
-                    <el-row >
+                    <el-row>
                         <el-col :span="1">
-                            <img  width="15px" height="15px" src="@/assets/folder.png" />
+                            <img width="15px" height="15px" src="@/assets/folder.png" />
                         </el-col>
                         <el-button @click="test" type="text">无文件夹</el-button>
                     </el-row>
                     <el-row>
                         <el-col :span="1">
-                            <img  src="@/assets/time.png" width="15px" height="15px"/>
+                            <img src="@/assets/time.png" width="15px" height="15px" />
                         </el-col>
                         <div class="date">日期</div>
                     </el-row>
                 </el-col>
-                <el-col :span="11" :offset="1" >
+                <el-col :span="11" :offset="1">
                     <el-row>
-                        <img  width="15px" height="15px"  src="@/assets/link.png" />
+                        <img width="15px" height="15px" src="@/assets/link.png" />
                         <a href="http://l.ead.me/bax7mX">l.ead.me/bax7mX</a>
                     </el-row>
                     <el-row>
-                        <img  width="15px" height="15px"  src="@/assets/arrow.png" />
+                        <img width="15px" height="15px" src="@/assets/arrow.png" />
                         <a href="http://139.199.207.xaa3">139.199.207.xaa3</a>
                     </el-row>
 
@@ -69,30 +69,32 @@
 
         </el-col>
 
-        <el-col :span="10" :offset="1" >
-                <el-col :span="8" class="qrcode-report">
-                    <span>访问量: {{count}}</span>
-                    <div><el-button type="text">详细报告</el-button></div>
-                </el-col>
+        <el-col :span="10" :offset="1">
+            <el-col :span="8" class="qrcode-report">
+                <span>访问量: {{count}}</span>
+                <div>
+                    <el-button type="text">详细报告</el-button>
+                </div>
+            </el-col>
 
-                <el-col :span="8">
-                    <div class="qrcode-image">
-                        <img class='img' :src="qrcodeImgUrl" />
-                    </div>
-                </el-col>
+            <el-col :span="8">
+                <div class="qrcode-image">
+                    <img class='img' :src="qrcodeImgUrl" />
+                </div>
+            </el-col>
 
-                <el-col :span="8" class="qrcode-operation">
-                    <div class="button">
-                        <el-dropdown split-button type="primary" @click="handleClick">下载
-                            <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item>编辑</el-dropdown-item>
-                                <el-dropdown-item>设计</el-dropdown-item>
-                                <el-dropdown-item>添加到文件夹</el-dropdown-item>
-                                <el-dropdown-item divided>暂停</el-dropdown-item>
-                            </el-dropdown-menu>
-                        </el-dropdown>
-                    </div>
-                </el-col>
+            <el-col :span="8" class="qrcode-operation">
+                <div class="button">
+                    <el-dropdown split-button type="primary" @click="handleClick">下载
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>编辑</el-dropdown-item>
+                            <el-dropdown-item>设计</el-dropdown-item>
+                            <el-dropdown-item>添加到文件夹</el-dropdown-item>
+                            <el-dropdown-item divided>暂停</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </div>
+            </el-col>
         </el-col>
     </el-card>
 </template>
@@ -112,7 +114,8 @@ export default {
   methods: {
     test() {
       console.log(111);
-    }
+    },
+    handleClick() {}
   }
 };
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div class="login-page">
     <div class="header">
-        <img class="logo" src="@/assets/logo.png" />
-        <el-button class="return-button" type="primary">
-          <img class="img" src="@/assets/return-arrow.png" />
-          <span class="text">返回到我们的网站</span>
-        </el-button>
-        <!-- <div class="return-button">
+      <img class="logo" src="@/assets/logo.png" />
+      <el-button class="return-button" type="primary">
+        <img class="img" src="@/assets/return-arrow.png" />
+        <span class="text">返回到我们的网站</span>
+      </el-button>
+      <!-- <div class="return-button">
             <img class="img" src="@/assets/return-arrow.png" />
             <span class="text">返回到我们的网站</span>
         </div> -->
@@ -14,28 +14,32 @@
     <div class="content">
       <div class="title-wrap">
         <!-- <h1 class="title">二维动态码生成器</h1> -->
-        <h1 >二维动态码生成器</h1>
+        <h1>二维动态码生成器</h1>
       </div>
-      
+
       <div class="login-box-wrap">
         <h1>登录</h1>
 
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
+        <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="0px" class="demo-ruleForm">
           <div class="errdiv" v-if="errorInfo">
             <span>{{errInfo}}</span>
           </div>
           <el-form-item prop="email">
-            <el-input v-model="ruleForm.email" placeholder="邮箱"></el-input>
+            <el-input v-model="loginForm.email" placeholder="邮箱"></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input type="password" placeholder="密码" v-model="ruleForm.password"></el-input>
+            <el-input type="password" placeholder="密码" v-model="loginForm.password"></el-input>
           </el-form-item>
           <div class="login-btn">
-              <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+            <el-button type="primary" @click="submitLoginForm('loginForm')">登录</el-button>
           </div>
           <el-row>
-              <el-col span="12"><p class="find-back" @click="gotoFindback()">忘记密码？</p></el-col>
-              <el-col span="12"><p class="register" @click="gotoSignup()">没有账号？ 注册</p></el-col>
+            <el-col :span="12">
+              <p class="find-back" @click="gotoFindback()">忘记密码？</p>
+            </el-col>
+            <el-col :span="12">
+              <p class="register" @click="gotoSignup()">没有账号？ 注册</p>
+            </el-col>
           </el-row>
         </el-form>
       </div>
@@ -48,10 +52,11 @@
 </template>
 
 <script>
+import { Message } from "element-ui";
 export default {
   data() {
     return {
-      ruleForm: {
+      loginForm: {
         email: "",
         password: ""
       },
@@ -64,6 +69,34 @@ export default {
     };
   },
   methods: {
+    submitLoginForm(formName) {
+      const self = this;
+      // self.errorInfo = false
+      // self.errInfo = ''
+      self.$refs[formName].validate(valid => {
+        if (valid) {
+          self.$axios
+            .post("/login/submit_login", formName)
+            .then(res => {
+              if (res.data.status === "success") {
+                // sessionStorage.setItem("email", res.data.email);
+                self.$router.push("/manage");
+              } else {
+                self.errorInfo = true;
+                self.errInfo = res.data.message;
+              }
+            })
+            .catch(error => {
+              Message({
+                message: "请检查网络并重试",
+                type: "error",
+                center: true
+              });
+            });
+        }
+      });
+    },
+    gotoFindback() {},
     gotoSignup() {
       this.$router.push("/signup");
     }

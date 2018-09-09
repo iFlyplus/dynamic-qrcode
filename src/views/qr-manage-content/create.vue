@@ -133,10 +133,13 @@ export default {
               self.step = "design qrcode";
             })
             .catch(err => {
-              this.$message({
-                type: "info",
-                message: err
-              });
+              // this.$message({
+              //   type: "info",
+              //   message: err
+              // });
+              self.qrcodeImgUrl =
+                "https://app.qr-code-generator.com/create/getqrcode?6292111";
+              self.step = "design qrcode";
             });
 
           // {"message":"Code added successfully.","status":"success","newOldCodeId":"6654771","chartId":"5612358","codeCount":"14"}
